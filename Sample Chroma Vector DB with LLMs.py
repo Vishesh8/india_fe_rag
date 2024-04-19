@@ -18,10 +18,8 @@ import time
 
 # COMMAND ----------
 
-# catalog = dbutils.widgets.get("catalog")
-# schema = dbutils.widgets.get("schema")
-catalog = "sarbani_dbrx_catalog"
-schema = "india_fe_demo"
+catalog = dbutils.widgets.get("catalog")
+schema = dbutils.widgets.get("schema")
 
 # COMMAND ----------
 
@@ -129,4 +127,4 @@ demo.launch(share=True)
 
 # COMMAND ----------
 
-time.sleep(258600)
+time.sleep(1800)
