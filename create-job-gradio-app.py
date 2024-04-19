@@ -88,6 +88,6 @@ payload = json.dumps(
 response = requests.request("POST", url, headers=headers, data=payload)
 
 if response.status_code == 200:
-  dbutils.notebook.exit("Job created successfully! Find the job id: " + str(response.json()['job_id']))
+  dbutils.notebook.exit("Job for gradio app created successfully! Job id: " + str(response.json()['job_id']))
 else:
   dbutils.notebook.exit("Job creation failed")
