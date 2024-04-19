@@ -30,7 +30,7 @@ payload = json.dumps(
   "continuous": {
     "pause_status": "PAUSED"
   },
-  "max_concurrent_runs": 1,
+  "max_concurrent_runs": 2,
   "tasks": [
     {
       "task_key": "sample_chromadb_llms",
