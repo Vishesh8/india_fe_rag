@@ -38,7 +38,8 @@ payload = json.dumps(
         "base_parameters": {
           "catalog": catalog,
           "schema": schema,
-          "volume": volume
+          "volume": volume,
+          "folder_name": folder_name
         },
         "source": "WORKSPACE"
       },
@@ -59,7 +60,6 @@ payload = json.dumps(
           "first_on_demand": 1,
           "availability": "SPOT_WITH_FALLBACK",
           "zone_id": "auto",
-          "instance_profile_arn": "arn:aws:iam::997819012307:instance-profile/one-env-databricks-access",
           "spot_bid_price_percent": 100,
           "ebs_volume_type": "GENERAL_PURPOSE_SSD",
           "ebs_volume_count": 1,

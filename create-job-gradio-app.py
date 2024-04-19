@@ -37,17 +37,14 @@ payload = json.dumps(
       "run_if": "ALL_SUCCESS",
       "notebook_task": {
         "notebook_path": f"/Repos/{current_user}/{folder_name}/Sample Chroma Vector DB with LLMs",
+        "base_parameters": {
+          "catalog": catalog,
+          "schema": schema,
+          "folder_name": folder_name
+        },
         "source": "WORKSPACE"
       },
-      "job_cluster_key": "rag_poc_cluster",
-      "timeout_seconds": 0,
-      "email_notifications": {},
-      "notification_settings": {
-        "no_alert_for_skipped_runs": false,
-        "no_alert_for_canceled_runs": false,
-        "alert_on_last_attempt": false
-      },
-      "webhook_notifications": {}
+      "job_cluster_key": "rag_poc_cluster"
     }
   ],
   "job_clusters": [
@@ -64,7 +61,6 @@ payload = json.dumps(
           "first_on_demand": 1,
           "availability": "SPOT_WITH_FALLBACK",
           "zone_id": "auto",
-          "instance_profile_arn": "arn:aws:iam::997819012307:instance-profile/one-env-databricks-access",
           "spot_bid_price_percent": 100,
           "ebs_volume_type": "GENERAL_PURPOSE_SSD",
           "ebs_volume_count": 1,
@@ -76,7 +72,7 @@ payload = json.dumps(
           "ResourceClass": "SingleNode",
           "Application": "pdf_rag_poc"
         },
-        "enable_elastic_disk": true,
+        "enable_elastic_disk": True,
         "data_security_mode": "SINGLE_USER",
         "runtime_engine": "STANDARD",
         "num_workers": 0
@@ -84,7 +80,7 @@ payload = json.dumps(
     }
   ],
   "run_as": {
-    "user_name": "vishesh.arya@databricks.com"
+    "user_name": current_user
   }
 }
 )
