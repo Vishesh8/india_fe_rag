@@ -1,9 +1,6 @@
 # Databricks notebook source
 # MAGIC %pip install chromadb textstat gradio
-
-# COMMAND ----------
-
-dbutils.library.restartPython()
+# MAGIC dbutils.library.restartPython()
 
 # COMMAND ----------
 
@@ -20,7 +17,12 @@ from langchain_core.documents import Document
 
 # COMMAND ----------
 
-pdf_emb_table = spark.read.table("sarbani_dbrx_catalog.india_fe_demo.pdf_demo_tbl").toPandas()
+catalog = dbutils.widgets.get("catalog")
+schema = dbutils.widgets.get("schema")
+
+# COMMAND ----------
+
+pdf_emb_table = spark.read.table(f"{catalog}.{schema}.pdf_demo_tbl").toPandas()
 pdf_emb_dict = pdf_emb_table.to_dict("records")
 len(pdf_emb_dict)
 
