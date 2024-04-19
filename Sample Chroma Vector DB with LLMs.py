@@ -1,5 +1,5 @@
 # Databricks notebook source
-# MAGIC %pip install chromadb textstat gradio
+# MAGIC %pip install chromadb textstat gradio langchain mlflow==2.11.0
 # MAGIC dbutils.library.restartPython()
 
 # COMMAND ----------
@@ -14,11 +14,14 @@ from langchain.chat_models import ChatDatabricks
 from langchain.embeddings.databricks import DatabricksEmbeddings
 from langchain.vectorstores import Chroma
 from langchain_core.documents import Document
+import time
 
 # COMMAND ----------
 
-catalog = dbutils.widgets.get("catalog")
-schema = dbutils.widgets.get("schema")
+# catalog = dbutils.widgets.get("catalog")
+# schema = dbutils.widgets.get("schema")
+catalog = "sarbani_dbrx_catalog"
+schema = "india_fe_demo"
 
 # COMMAND ----------
 
@@ -126,4 +129,4 @@ demo.launch(share=True)
 
 # COMMAND ----------
 
-
+time.sleep(86400)
