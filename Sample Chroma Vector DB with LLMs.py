@@ -26,6 +26,10 @@ len(pdf_emb_dict)
 
 # COMMAND ----------
 
+pdf_emb_dict
+
+# COMMAND ----------
+
 client = chromadb.Client()
 collection = client.create_collection("pdf_collection")
 
@@ -72,12 +76,24 @@ def respond(message, history):
   if len(message.strip()) == 0:
     return "ERROR the question should not be empty"
   # q = {"inputs": [message]}
-  try:
-    response_data=qa(message)["result"]
-  except Exception as error:
-    response_data = f"ERROR status_code: {type(error).__name__}"
-  # print(response.json())
+  # try:
+  response_data=qa(message)["result"]
+  # except Exception as error:
+  #   response_data = f"ERROR status_code: {type(error).__name__}"
+  # # print(response.json())
   return response_data
+
+# COMMAND ----------
+
+examples = respond("can you write 3 questions specific to Crisil India", "the document is a business report")
+
+# COMMAND ----------
+
+examples.split("\n\n")
+
+# COMMAND ----------
+
+
 
 # COMMAND ----------
 
@@ -94,10 +110,9 @@ demo = gr.ChatInterface(
                        container=False, scale=7),
     title="Databricks LLM RAG demo - Chat with DBRX Databricks model serving endpoint",
     description="This chatbot is a demo example for the dbdemos llm chatbot. <br>This content is provided as a LLM RAG educational example, without support. It is using DBRX, can hallucinate and should not be used as production content.<br>Please review our dbdemos license and terms for more details.",
-    examples=[["What is DBRX?"],
-              ["How can I start a Databricks cluster?"],
-              ["What is a Databricks Cluster Policy?"],
-              ["How can I track billing usage on my workspaces?"],],
+    #examples=[["Summarize the business report?"],
+              #["What is the recent GDP estimates?"]],
+    examples= examples.split("\n\n"),
     cache_examples=False,
     theme=theme,
     retry_btn=None,
@@ -106,3 +121,7 @@ demo = gr.ChatInterface(
 )
 
 demo.launch(share=True)
+
+# COMMAND ----------
+
+
