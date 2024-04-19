@@ -39,8 +39,7 @@ payload = json.dumps(
         "notebook_path": f"/Repos/{current_user}/{folder_name}/Sample Chroma Vector DB with LLMs",
         "base_parameters": {
           "catalog": catalog,
-          "schema": schema,
-          "folder_name": folder_name
+          "schema": schema
         },
         "source": "WORKSPACE"
       },

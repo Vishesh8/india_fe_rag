@@ -38,8 +38,7 @@ payload = json.dumps(
         "base_parameters": {
           "catalog": catalog,
           "schema": schema,
-          "volume": volume,
-          "folder_name": folder_name
+          "volume": volume
         },
         "source": "WORKSPACE"
       },
