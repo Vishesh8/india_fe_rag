@@ -51,7 +51,7 @@ payload = json.dumps(
       "job_cluster_key": "rag_poc_cluster",
       "new_cluster": {
         "cluster_name": "",
-        "spark_version": "13.3.x-cpu-ml-scala2.12",
+        "spark_version": "13.3.x-scala2.12",
         "spark_conf": {
           "spark.master": "local[*, 4]",
           "spark.databricks.cluster.profile": "singleNode"
