@@ -7,16 +7,17 @@ Sample RAG implementation with open source ChromaDB Vector Search, bge-large-en 
 Copy and paste the code below in your Databricks notebook cell, configure the set of to be configured parameters, and run the cell
 This should clone the repo in your user folder as well as create sample databricks jobs for pdf processing on top of your configured volume and also a gradio app job that you can run continuously
 
-### To be Configured
-# Set Catalog Configurations
+## To be Configured
+### Set Catalog Configurations
+```
 catalog = "sarbani_dbrx_catalog"
 schema = "india_fe_demo"
 volume = "fe_demo_pdf"
+```
 
-#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-## No need to configure
-# Set Repo Configurations
+### No need to configure
+```
 gitProvider = "gitHub"
 gitUrl = "https://github.com/Vishesh8/india_fe_rag"
 
@@ -50,3 +51,4 @@ gradio_app = dbutils.notebook.run(f"/Repos/{current_user}/{folder_name}/_resourc
 print(response)
 print(status_pdf)
 print(gradio_app)
+```
