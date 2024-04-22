@@ -1,4 +1,4 @@
-# india_fe_rag
+# Retreival Augmented Generation (RAG) Demo
 
 Sample RAG implementation with open source ChromaDB Vector Search, bge-large-en embedding model & DBRX-Instruct LLM. Install this code repo in your workspace for a quick experiment on Databricks
 
