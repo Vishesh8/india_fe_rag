@@ -45,6 +45,7 @@ headers = {
 
 response = requests.request("POST", url, headers=headers, data=payload).json()
 
+# Create Jobs for a scheduled or continuous run
 status_pdf = dbutils.notebook.run(f"/Repos/{current_user}/{folder_name}/_resources/create-job-pdf-processing", 3600, {"catalog": catalog, "folder_name": folder_name, "schema": schema, "volume": volume})
 gradio_app = dbutils.notebook.run(f"/Repos/{current_user}/{folder_name}/_resources/create-job-gradio-app", 3600, {"catalog": catalog, "folder_name": folder_name, "schema": schema})
 
