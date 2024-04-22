@@ -4,8 +4,8 @@ Sample RAG implementation with open source ChromaDB Vector Search, bge-large-en 
 
 ## Usage:
 
-Copy and paste the code below in your Databricks notebook cell, configure the set of to be configured parameters, and run the cell
-This should clone the repo in your user folder as well as create sample databricks jobs for pdf processing on top of your configured volume and also a gradio app job that you can run continuously
+Copy and paste the code below in your Databricks notebook cell, configure the set of to-be-configured parameters, and run the cell
+This should clone the repo in your user folder as well as create sample Databricks jobs for pdf processing on top of your configured volume and also a gradio app job that you can run continuously
 
 ## To be Configured
 ### Set Catalog Configurations
@@ -26,7 +26,7 @@ import requests
 import json
 
 workspaceUrl = 'https://' + spark.conf.get("spark.databricks.workspaceUrl")
-token = dbutils.notebook.entry_point.getDbutils().notebook().getContext().apiToken().get()
+token = dbutils.notebook.entry_point.getDbutils().notebook().getContext().apiToken().get() # Not recommended and can be replaced your your own user token
 current_user = spark.sql("select current_user()").first()[0]
 folder_name = gitUrl.split("/")[-1]
 
