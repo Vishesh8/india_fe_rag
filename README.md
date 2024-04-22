@@ -2,13 +2,13 @@
 
 Sample RAG implementation with open source ChromaDB Vector Search, bge-large-en embedding model & DBRX-Instruct LLM. Install this code repo in your workspace for a quick experiment on Databricks
 
-## Usage:
+## Usage
 
 Copy and paste the code below in your Databricks notebook cell, configure the set of to-be-configured parameters, and run the cell
 This should clone the repo in your user folder as well as create sample Databricks jobs for pdf processing on top of your configured volume and also a gradio app job that you can run continuously
 
-## To be Configured
-### Set Catalog Configurations
+### To be Configured
+#### Set Catalog Configurations
 ```
 catalog = "sarbani_dbrx_catalog"
 schema = "india_fe_demo"
