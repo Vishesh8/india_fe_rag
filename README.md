@@ -9,6 +9,7 @@ This should clone the repo in your user folder as well as create sample Databric
 
 ### To be Configured
 #### Set Catalog Configurations
+Add catalog, database, and volume information where the pdf documents required for the RAG application are stored
 ```
 catalog = "sarbani_dbrx_catalog"
 schema = "india_fe_demo"
